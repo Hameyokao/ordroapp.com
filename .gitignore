@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env
+.venv
+
+# SQLite database (generated at runtime — do not commit user data)
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Uploaded files (user data — do not commit)
+uploads/
+data/uploads/
+
+# Uploaded product/logo images (user data)
+assets/uploads/*
+!assets/uploads/.gitkeep
+
+# The original distribution zip (not part of the website)
+ordro_FULL_v13.zip
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Streamlit secrets (never commit these)
+.streamlit/secrets.toml

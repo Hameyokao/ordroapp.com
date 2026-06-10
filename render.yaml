@@ -1,0 +1,19 @@
+# Render Blueprint for ORDRO
+# This tells Render how to build and run the app. With this file in your
+# GitHub repo, Render can set everything up almost automatically.
+services:
+  - type: web
+    name: ordro
+    runtime: python
+    plan: starter            # Starter ($7/mo) is required for a persistent disk
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: ORDRO_DATA_DIR
+        value: /var/ordro-data   # database + uploads are stored here
+      - key: PYTHON_VERSION
+        value: "3.12.4"
+    disk:
+      name: ordro-data
+      mountPath: /var/ordro-data   # the persistent disk lives here
+      sizeGB: 1
